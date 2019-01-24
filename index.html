@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+  
+<!-- Begin Direct Connection Example -->
+
+<button id="gktStart" onclick="toggleListening()">Start</button>
+<button id="gktStop" onclick="toggleListening()">Stop</button>
+<span id="gktServer" address="ws://gk.openfin.co:8800/client/ws/"></span>
+<span id="gktRecorderWorker" address="sqc/recorderWorker.js">
+
+<!-- End Direct Connection Example -->
+
+<!-- Begin Relay Example -->
+<!--
+PIN:<br>
+<input type="text" id="gktPin"></input>
+<button id="gktStart" onclick="toggleListening();readSocket()">Start</button>
+<button id="gktStop" onclick="toggleListening()">Stop</button>
+<span id="gktServer" address="ws://[sqc-server-address]/client/ws/"></span>
+<span id="gktWSSServer" address="ws://[ws-server-address]/"></span>
+<span id="gktRecorderWorker" address="sqc/recorderWorker.js">
+-->
+<!-- End Relay Example -->
+
+<!-- Begin Custom Event Field -->
+<br>
+Transcript:<br>
+<textarea rows="10" cols="100" id="transcriptOutput"></textarea>
+<br>
+<hr>
+Last Response: <br>
+<pre id="JSONoutput"></pre>
+<!-- End Custom Event Field -->
+
+<!-- Begin GreenKey Scribe Mic Button Script -->
+<script src="sqc/mic.js"></script>
+<script src="sqc/dictate.js"></script>
+<script src="sqc/recorder.js"></script>
+<script src="sqc/controller.js"></script>
+<!-- End GreenKey Scribe Mic Button Script -->
+
+</body>
+</html>
