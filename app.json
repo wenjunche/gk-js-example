@@ -5,11 +5,11 @@
         "uuid": "GK Example",
         "url": "https://gk.openfin.co:3390/index.html",
         "autoShow": true,
-        "defaultHeight": 800,
-        "defaultWidth": 600,
+        "defaultHeight": 1000,
+        "defaultWidth": 800,
         "frame": true,
         "resizable": true,
-        "saveWindowState": true,
+        "saveWindowState": false,
         "contextMenu": true
     },
     "runtime": {

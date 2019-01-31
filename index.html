@@ -5,11 +5,14 @@
 <!-- Begin Direct Connection Example -->
 
 <div>
-<p>Example phrases</p>
-<p>dec eighteen schatz sixty four and a half offered</p>
-<p>I need directions to fifty five west monroe avenue by car</p>
+    <p>Click on Initialize first</p>
+    <button id="initialize" onclick="dictate.init();">Initialize</button>
 </div>
-<button id="initialize" onclick="dictate.init();">Initialize</button>
+
+<div>
+<p>Example phrases</p>
+<p>Mark Josling Barclays London 1 Month USD in 30MM</p>
+</div>
 <button id="gktStart" onclick="toggleListening()">Start</button>
 <button id="gktStop" onclick="toggleListening()">Stop</button>
 <span id="gktServer" address="ws://gk.openfin.co:8800/client/ws/"></span>
