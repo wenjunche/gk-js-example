@@ -1,0 +1,19 @@
+{
+    "devtoolxs_port": 9090,
+    "startup_app": {
+        "name": "GK Example",
+        "uuid": "GK Example",
+        "url": "https://gk.openfin.co:3390/index.html",
+        "autoShow": true,
+        "defaultHeight": 800,
+        "defaultWidth": 600,
+        "frame": true,
+        "resizable": true,
+        "saveWindowState": true,
+        "contextMenu": true
+    },
+    "runtime": {
+        "arguments": "--unsafely-treat-insecure-origin-as-secure=ws://gk.openfin.co:8800 --ignore-certificate-errors --v=1 --force-device-scale-factor=1 ",
+        "version": "stable"
+    }
+}
