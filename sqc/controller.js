@@ -4,7 +4,7 @@ function transcriptionReceived(code, data) {
   try {
   	dataObject = JSON.parse(data);
   	if ('result' in dataObject) {
-			if (dataObject.result.final === true) {
+			if (dataObject.result.intents) {
 					const entities = parseIntents(dataObject.result.intents);
 					if (entities.length > 0) {
 						$('#JSONoutput').html(JSON.stringify(entities, null, 2));
@@ -31,7 +31,7 @@ function transcriptionReceived(code, data) {
 
 function parseIntents(intents) {
 	let entities = [];
-	if (intents && intents.entities) {
+	if (intents && intents.entities && intents.entities.length > 0) {
 		parseEntity(intents.entities, entities, "trader_name");
 		parseEntity(intents.entities, entities, "legal_entity");
 		parseEntity(intents.entities, entities, "city");
