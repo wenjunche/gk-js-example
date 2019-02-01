@@ -4,7 +4,11 @@ function transcriptionReceived(code, data) {
   try {
   	dataObject = JSON.parse(data);
   	if ('result' in dataObject) {
-      $('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
+			if (dataObject.result.final === true) {
+					parseIntents(dataObject.result.intents);
+			} else {
+				$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
+			}
 
 			if ('hypotheses' in dataObject.result) {
 				if ('clean_transcript' in dataObject.result.hypotheses[0]) {
@@ -20,6 +24,27 @@ function transcriptionReceived(code, data) {
   }
 }
 
+function parseIntents(intents) {
+	let entities = [];
+	if (intents && intents.entities) {
+		parseEntity(intents.entities, entities, "trader_name");
+		parseEntity(intents.entities, entities, "legal_entity");
+		parseEntity(intents.entities, entities, "city");
+		parseEntity(intents.entities, entities, "tenor");
+		parseEntity(intents.entities, entities, "currency");
+		parseEntity(intents.entities, entities, "quantity");
+	}
+}
+
+function parseEntity(entityArray, entities, entityName) {
+	entityArray.forEach(entityData => {
+		 if (entityData.label === entityName && entityData.matches.length > 0) {
+			 if (entityData.matches[0].length > 0) {
+				 entities.push({entityName, value: entityData.matches[0][0].value});
+			 }
+		 }
+	});
+}
 
 //// Direct connection example
 /*

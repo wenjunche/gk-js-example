@@ -1,0 +1,415 @@
+{
+	"status": 0,
+	"timestamp": 1548970498397,
+	"segments": [{
+		"startTimeSec": 0,
+		"intents": [{
+			"entities": [{
+					"matches": [
+						[{
+							"startTimeSec": 6.21,
+							"probability": 1,
+							"value": "30M",
+							"endTimeSec": 7.23,
+							"lattice_path": [
+								[
+									10,
+									0
+								],
+								[
+									11,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "quantity"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 4.14,
+							"probability": 1,
+							"value": "1month",
+							"endTimeSec": 4.83,
+							"lattice_path": [
+								[
+									4,
+									0
+								],
+								[
+									5,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "tenor"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 3.75,
+							"probability": 1,
+							"value": "london",
+							"endTimeSec": 4.14,
+							"lattice_path": [
+								[
+									3,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "city"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 3.24,
+							"probability": 1,
+							"value": "Barclays",
+							"endTimeSec": 3.75,
+							"lattice_path": [
+								[
+									2,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "client"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 4.86,
+							"probability": 0.85,
+							"value": "USD",
+							"endTimeSec": 5.76,
+							"lattice_path": [
+								[
+									6,
+									4
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "currency"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 1.44,
+							"probability": 1,
+							"value": "alexandra boyle",
+							"endTimeSec": 2.85,
+							"lattice_path": [
+								[
+									0,
+									0
+								],
+								[
+									1,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "trader_name"
+				}
+			],
+			"probability": 1,
+			"label": "currencies"
+		}],
+		"clean_transcript": "Alexandra Boyle Barclays London one month USD n 30 million.",
+		"words": [{
+				"start": 1.44,
+				"length": 0.78,
+				"word": "alexandra",
+				"confidence": 0.996838
+			},
+			{
+				"start": 2.22,
+				"length": 0.63,
+				"word": "boyle",
+				"confidence": 0.811825
+			},
+			{
+				"start": 3.24,
+				"length": 0.51,
+				"word": "barclays",
+				"confidence": 0.912749
+			},
+			{
+				"start": 3.75,
+				"length": 0.39,
+				"word": "london",
+				"confidence": 0.99966
+			},
+			{
+				"start": 4.14,
+				"length": 0.24,
+				"word": "one",
+				"confidence": 1
+			},
+			{
+				"start": 4.38,
+				"length": 0.45,
+				"word": "month",
+				"confidence": 1
+			},
+			{
+				"start": 4.86,
+				"length": 0.24,
+				"word": "u",
+				"confidence": 0.979768
+			},
+			{
+				"start": 5.1,
+				"length": 0.24,
+				"word": "s",
+				"confidence": 0.999648
+			},
+			{
+				"start": 5.37,
+				"length": 0.39,
+				"word": "d",
+				"confidence": 0.998408
+			},
+			{
+				"start": 5.82,
+				"length": 0.36,
+				"word": "n",
+				"confidence": 0.988458
+			},
+			{
+				"start": 6.21,
+				"length": 0.45,
+				"word": "thirty",
+				"confidence": 1
+			},
+			{
+				"start": 6.66,
+				"length": 0.57,
+				"word": "million",
+				"confidence": 1
+			}
+		],
+		"endTimeSec": 7.77,
+		"transcript": "alexandra boyle barclays london one month u s d n thirty million",
+		"word_confusions": [{
+				"noise": 0.000397412,
+				"oh": 0.000560433,
+				"mm": 0.000390565,
+				"mn": 0.000331205,
+				"uh": 0.000567073,
+				"": 0.0378044
+			},
+			{
+				"alexandra": 0.996838,
+				"alexander": 0.00316211
+			},
+			{},
+			{
+				"boil": 0.188175,
+				"boyle": 0.811825
+			},
+			{},
+			{
+				"barkley's": 0.033692,
+				"barclays": 0.912749,
+				"barclay's": 0.0162289,
+				"barclays'": 0.0373301
+			},
+			{},
+			{
+				"lundon": 0.000339793,
+				"london": 0.99966
+			},
+			{},
+			{
+				"one": 1
+			},
+			{},
+			{
+				"month": 1
+			},
+			{},
+			{
+				"eu": 0.00039466,
+				"you": 0.0194857,
+				"u.": 0.000351643,
+				"u": 0.979768
+			},
+			{},
+			{
+				"s": 0.999648,
+				"s.": 0.000351643
+			},
+			{},
+			{
+				"d.": 0.00159165,
+				"d": 0.998408
+			},
+			{},
+			{
+				"en": 0.00906262,
+				"n.": 0.00247938,
+				"n": 0.988458
+			},
+			{
+				"a": 0.00634642
+			},
+			{
+				"thirty": 1
+			},
+			{},
+			{
+				"million": 1
+			},
+			{}
+		]
+	}],
+	"call_id": "none",
+	"interpreted_quote": {},
+	"result": {
+		"hypotheses": [{
+			"clean_transcript": "Alexandra Boyle Barclays London one month USD in 30 million.",
+			"transcript": "alexandra boyle barclays london one month u s d in thirty million"
+		}],
+		"intents": [{
+			"entities": [{
+					"matches": [
+						[{
+							"startTimeSec": 6.21,
+							"probability": 1,
+							"value": "30M",
+							"endTimeSec": 7.23,
+							"lattice_path": [
+								[
+									10,
+									0
+								],
+								[
+									11,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "quantity"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 4.14,
+							"probability": 1,
+							"value": "1month",
+							"endTimeSec": 4.83,
+							"lattice_path": [
+								[
+									4,
+									0
+								],
+								[
+									5,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "tenor"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 3.75,
+							"probability": 1,
+							"value": "london",
+							"endTimeSec": 4.14,
+							"lattice_path": [
+								[
+									3,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "city"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 3.24,
+							"probability": 1,
+							"value": "Barclays",
+							"endTimeSec": 3.75,
+							"lattice_path": [
+								[
+									2,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "client"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 4.86,
+							"probability": 0.85,
+							"value": "USD",
+							"endTimeSec": 5.76,
+							"lattice_path": [
+								[
+									6,
+									4
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "currency"
+				},
+				{
+					"matches": [
+						[{
+							"startTimeSec": 1.44,
+							"probability": 1,
+							"value": "alexandra boyle",
+							"endTimeSec": 2.85,
+							"lattice_path": [
+								[
+									0,
+									0
+								],
+								[
+									1,
+									0
+								]
+							],
+							"structure_confidence": 1
+						}]
+					],
+					"label": "trader_name"
+				}
+			],
+			"probability": 1,
+			"label": "currencies"
+		}],
+		"final": true
+	},
+	"id": "0d375aa7-9435-47b0-8361-3b524c90fda1"
+}
