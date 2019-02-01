@@ -32,12 +32,12 @@ function transcriptionReceived(code, data) {
 function parseIntents(intents) {
 	let entities = [];
 	if (intents && intents.length > 0 && intents[0].entities && intents[0].entities.length > 0) {
-		parseEntity(intents.entities, entities, "trader_name");
-		parseEntity(intents.entities, entities, "legal_entity");
-		parseEntity(intents.entities, entities, "city");
-		parseEntity(intents.entities, entities, "tenor");
-		parseEntity(intents.entities, entities, "currency");
-		parseEntity(intents.entities, entities, "quantity");
+		parseEntity(intents[0].entities, entities, "trader_name");
+		parseEntity(intents[0].entities, entities, "legal_entity");
+		parseEntity(intents[0].entities, entities, "city");
+		parseEntity(intents[0].entities, entities, "tenor");
+		parseEntity(intents[0].entities, entities, "currency");
+		parseEntity(intents[0].entities, entities, "quantity");
 	}
 	return entities;
 }
