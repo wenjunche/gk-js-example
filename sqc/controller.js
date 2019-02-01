@@ -4,26 +4,31 @@ function transcriptionReceived(code, data) {
   try {
   	dataObject = JSON.parse(data);
   	if ('result' in dataObject) {
-			if (dataObject.result.intents) {
-					const entities = parseIntents(dataObject.result.intents);
-					if (entities.length > 0) {
-						$('#JSONoutput').html(JSON.stringify(entities, null, 2));
-					} else {
-						$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
-					}
-			} else {
-				$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
-			}
-
-			if ('hypotheses' in dataObject.result) {
-				if ('clean_transcript' in dataObject.result.hypotheses[0]) {
-					$('#transcriptOutput').text(dataObject.result.hypotheses[0].clean_transcript)
+			try {
+				if (dataObject.result.intents) {
+						const entities = parseIntents(dataObject.result.intents);
+						if (entities.length > 0) {
+							$('#JSONoutput').html(JSON.stringify(entities, null, 2));
+						} else {
+							$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
+						}
 				} else {
-					$('#transcriptOutput').text(dataObject.result.hypotheses[0].transcript)
+					$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
+				}
+
+				if ('hypotheses' in dataObject.result) {
+					if ('clean_transcript' in dataObject.result.hypotheses[0]) {
+						$('#transcriptOutput').text(dataObject.result.hypotheses[0].clean_transcript)
+					} else {
+						$('#transcriptOutput').text(dataObject.result.hypotheses[0].transcript)
+					}
 				}
 			}
-    }
-  }
+			catch (parseErr) {
+				console.error(parseErr);
+			}
+		}
+	}
   catch (err) {
     console.log(data);
   }
