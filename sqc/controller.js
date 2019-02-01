@@ -31,7 +31,7 @@ function transcriptionReceived(code, data) {
 
 function parseIntents(intents) {
 	let entities = [];
-	if (intents && intents.entities && intents.entities.length > 0) {
+	if (intents && intents.length > 0 && intents[0].entities && intents[0].entities.length > 0) {
 		parseEntity(intents.entities, entities, "trader_name");
 		parseEntity(intents.entities, entities, "legal_entity");
 		parseEntity(intents.entities, entities, "city");
