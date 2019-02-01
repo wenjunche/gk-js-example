@@ -5,7 +5,12 @@ function transcriptionReceived(code, data) {
   	dataObject = JSON.parse(data);
   	if ('result' in dataObject) {
 			if (dataObject.result.final === true) {
-					parseIntents(dataObject.result.intents);
+					const entities = parseIntents(dataObject.result.intents);
+					if (entities.length > 0) {
+						$('#JSONoutput').html(JSON.stringify(entities, null, 2));
+					} else {
+						$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
+					}
 			} else {
 				$('#JSONoutput').html(JSON.stringify(dataObject, null, 2));
 			}
@@ -34,6 +39,7 @@ function parseIntents(intents) {
 		parseEntity(intents.entities, entities, "currency");
 		parseEntity(intents.entities, entities, "quantity");
 	}
+	return entities;
 }
 
 function parseEntity(entityArray, entities, entityName) {
