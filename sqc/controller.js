@@ -41,15 +41,24 @@ function parseInterpretedQuote(interpretedQuote) {
 		parseEntity(interpretedQuote.terms, entities, "terms");
 		parseEntity(interpretedQuote.bid, entities, "bid");
 		parseEntity(interpretedQuote.ask, entities, "ask");
+		if (interpretedQuote.hedge) {
+			parseEntity(interpretedQuote.hedge.price, entities, "hedge.price");
+		}
+		if (interpretedQuote.quantity) {
+			parseEntity(interpretedQuote.quantity.ask, entities, "quantity.ask");
+			parseEntity(interpretedQuote.quantity.bid, entities, "quantity.bid");
+		}
 	}
 	return entities;
 }
 
 function parseEntity(entity, entities, entityName) {
-	if (Array.isArray(entity)) {
-		entities.push({entityName, value: entity.join()});
-	} else {
-		entities.push({entityName, value: entity});
+	if (entity) {
+		if (Array.isArray(entity)) {
+			entities.push({entityName, value: entity.join()});
+		} else {
+			entities.push({entityName, value: entity});
+		}
 	}
 }
 
