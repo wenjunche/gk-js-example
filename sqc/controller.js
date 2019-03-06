@@ -5,8 +5,8 @@ function transcriptionReceived(code, data) {
   	dataObject = JSON.parse(data);
   	if ('result' in dataObject) {
 			try {
-				if (dataObject.result.intents) {
-						const entities = parseIntents(dataObject.result.intents);
+				if (dataObject.result.interpreted_quote) {
+						const entities = parseInterpretedQuote(dataObject.result.interpreted_quote);
 						if (entities.length > 0) {
 							$('#JSONoutput').html(JSON.stringify(entities, null, 2));
 						} else {
@@ -34,27 +34,23 @@ function transcriptionReceived(code, data) {
   }
 }
 
-function parseIntents(intents) {
+function parseInterpretedQuote(interpretedQuote) {
 	let entities = [];
-	if (intents && intents.length > 0 && intents[0].entities && intents[0].entities.length > 0) {
-		parseEntity(intents[0].entities, entities, "trader_name");
-		parseEntity(intents[0].entities, entities, "legal_entity");
-		parseEntity(intents[0].entities, entities, "city");
-		parseEntity(intents[0].entities, entities, "tenor");
-		parseEntity(intents[0].entities, entities, "currency");
-		parseEntity(intents[0].entities, entities, "quantity");
+	if (interpretedQuote) {
+		parseEntity(interpretedQuote.product, entities, "product");
+		parseEntity(interpretedQuote.terms, entities, "terms");
+		parseEntity(interpretedQuote.bid, entities, "bid");
+		parseEntity(interpretedQuote.ask, entities, "ask");
 	}
 	return entities;
 }
 
-function parseEntity(entityArray, entities, entityName) {
-	entityArray.forEach(entityData => {
-		 if (entityData.label === entityName && entityData.matches.length > 0) {
-			 if (entityData.matches[0].length > 0) {
-				 entities.push({entityName, value: entityData.matches[0][0].value});
-			 }
-		 }
-	});
+function parseEntity(entity, entities, entityName) {
+	if (Array.isArray(entity)) {
+		entities.push({entityName, value: entity.join()});
+	} else {
+		entities.push({entityName, value: entity});
+	}
 }
 
 //// Direct connection example
